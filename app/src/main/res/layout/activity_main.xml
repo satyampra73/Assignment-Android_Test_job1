@@ -4,19 +4,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#e6eeff"
     tools:context=".MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="363dp"
-        android:layout_height="628dp"
+        android:layout_width="362dp"
+        android:layout_height="621dp"
         android:layout_marginTop="2dp"
+        android:background="@color/white"
+        android:elevation="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView3"
-        app:layout_constraintVertical_bias="0.047"
+        app:layout_constraintVertical_bias="0.0"
         tools:context=".MainActivity">
+
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/pie_chart"
+            android:layout_width="169dp"
+            android:layout_height="153dp"
+            android:layout_marginBottom="32dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.082"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/image2"
@@ -145,6 +158,48 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/bluebtn"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="60dp"
+            android:background="@drawable/shape_b2"
+            android:backgroundTint="@color/blue"
+            android:textStyle="normal"
+
+            app:layout_constraintStart_toEndOf="@+id/textView4"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout2"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/green_btn"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="10sp"
+            android:background="@drawable/shape_b2"
+            android:backgroundTint="@color/green"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="@+id/bluebtn"
+
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/bluebtn"
+            app:layout_constraintTop_toBottomOf="@+id/bluebtn" />
+
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/red_btn"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/shape_b2"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="@+id/green_btn"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/green_btn"
+            app:layout_constraintTop_toBottomOf="@+id/green_btn" />
+
+
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button2"
             android:layout_width="47dp"
@@ -240,7 +295,7 @@
                 android:layout_height="14dp"
                 android:layout_marginTop="24dp"
                 android:layout_marginEnd="24dp"
-                android:text="4.2M"
+                android:text="90"
                 android:textSize="10dp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toStartOf="@+id/cons4_textview4"
@@ -253,7 +308,7 @@
                 android:layout_width="27dp"
                 android:layout_height="14dp"
                 android:layout_marginTop="28dp"
-                android:text="4.2M"
+                android:text="345"
                 android:textSize="10dp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -278,7 +333,7 @@
                 android:layout_width="40dp"
                 android:layout_height="9dp"
                 android:layout_marginTop="7dp"
-                android:text="Followers"
+                android:text="Reactions"
                 android:textSize="7dp"
                 app:layout_constraintEnd_toEndOf="@+id/cons4_text3"
                 app:layout_constraintHorizontal_bias="0.23"
@@ -290,7 +345,7 @@
                 android:layout_width="40dp"
                 android:layout_height="9dp"
                 android:layout_marginBottom="8dp"
-                android:text="Followers"
+                android:text="Comments"
                 android:textSize="7dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/cons4_textview4"
@@ -302,6 +357,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout2"
             android:layout_width="171dp"
             android:layout_height="91dp"
             android:layout_marginTop="24dp"
@@ -410,6 +466,57 @@
                 app:layout_constraintTop_toBottomOf="@+id/cons4_textview6" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="175dp"
+            android:layout_height="19dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="19dp"
+            android:text="Age Engagement Rate"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/pie_chart"
+            app:layout_constraintBottom_toTopOf="@+id/pie_chart"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/blue_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10-25:  25%"
+            android:layout_marginLeft="10dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/bluebtn"
+            app:layout_constraintBottom_toBottomOf="@+id/bluebtn"
+            app:layout_constraintTop_toTopOf="@+id/bluebtn"
+            tools:layout_editor_absoluteX="275dp" />
+
+        <TextView
+            android:id="@+id/red_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10-25:  45%"
+            android:layout_marginLeft="10dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/red_btn"
+            app:layout_constraintBottom_toBottomOf="@+id/red_btn"
+            app:layout_constraintTop_toTopOf="@+id/red_btn"
+            tools:layout_editor_absoluteX="271dp" />
+
+        <TextView
+            android:id="@+id/green_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="26-38:  30%"
+            android:textStyle="bold"
+            android:layout_marginLeft="10dp"
+            app:layout_constraintStart_toEndOf="@+id/green_btn"
+            app:layout_constraintBottom_toBottomOf="@+id/green_btn"
+            app:layout_constraintTop_toTopOf="@+id/green_btn"
+            tools:layout_editor_absoluteX="271dp" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <de.hdodenhof.circleimageview.CircleImageView
